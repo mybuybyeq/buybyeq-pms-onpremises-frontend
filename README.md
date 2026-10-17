@@ -17,12 +17,12 @@ A standalone Property Management System built with React and Vite.
 ### 1. Install Dependencies
 
 ```bash
-npm install
+bun install
 ```
 
 ### 2. Configure Environment Variables
 
-Copy the `.env.example` file to `.env` and update with your API endpoint:
+For standalone frontend development, copy `.env.example` to `.env` and update the API endpoint:
 
 ```bash
 cp .env.example .env
@@ -30,13 +30,15 @@ cp .env.example .env
 
 Edit `.env` and set your API URL:
 ```
-VITE_PMS_API_URL=http://your-api-url/api
+VITE_PMS_API_BASE_URL=http://your-api-url
 ```
+
+When the frontend is served by the compiled backend, it uses the same origin by default. Set the backend `PMS_API_BASE_URL` environment variable only when the API is hosted elsewhere. The backend exposes that optional override through `/runtime-config.js`.
 
 ### 3. Run Development Server
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 The app will start at `http://localhost:3000`
@@ -44,7 +46,7 @@ The app will start at `http://localhost:3000`
 ### 4. Build for Production
 
 ```bash
-npm run build
+bun run build
 ```
 
 The production build will be in the `dist` directory.

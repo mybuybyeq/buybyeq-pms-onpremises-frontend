@@ -1,0 +1,131 @@
+.pms {
+  .permissions-page {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .permissions-page h1 {
+    color: var(--side-text-color);
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .role-form {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .role-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border 0.2s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+    }
+  }
+
+  .permissions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .permission-section {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .section-header {
+    background-color: var(--background-color);
+    color: var(--side-text-color);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .section-header h2 {
+    margin: 0;
+    text-transform: capitalize;
+  }
+
+  .toggle-icon {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+  .permission-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .permission-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: var(--background-color);
+    color: var(--base-text-color);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .permission-item input {
+    margin-right: 10px;
+  }
+
+  .permission-item label {
+    cursor: pointer;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .permission-list {
+      grid-template-columns: 1fr;
+    }
+
+    .section-header {
+      padding: 12px 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .permissions-page {
+      padding: 10px;
+    }
+
+    .permissions-page h1 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .role-input {
+      max-width: 100%;
+    }
+
+    .save-btn {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+}

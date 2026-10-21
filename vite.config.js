@@ -20,7 +20,8 @@ export default defineConfig({
 
   // Build configuration
   build: {
-    outDir: "dist",
+    outDir: "../backend/frontend",
+    emptyOutDir: true,
     sourcemap: true,
   },
 });

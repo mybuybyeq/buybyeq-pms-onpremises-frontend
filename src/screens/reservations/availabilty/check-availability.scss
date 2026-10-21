@@ -1,0 +1,702 @@
+.pms {
+  .booking-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  /* Hotel Selection */
+  .hotel-selection {
+    position: relative;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .hotel-selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+  }
+
+  .dropdown-icon {
+    transition: transform 0.2s;
+  }
+
+  .dropdown-icon.open {
+    transform: rotate(180deg);
+  }
+
+  .hotel-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    z-index: 10;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .hotel-option {
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+
+  .hotel-option:hover {
+    background-color: #f0f0f0;
+  }
+
+  .hotel-option.selected {
+    background-color: #e3f2fd;
+    font-weight: 500;
+  }
+
+  /* Date Picker */
+  .date-picker-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 1.5rem 0;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    width: fit-content;
+  }
+
+  .date-picker-trigger svg {
+    font-size: 1.2rem;
+  }
+
+  .date-picker-popover {
+    position: absolute;
+    z-index: 1000;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Selection Hint */
+  .selection-hint {
+    padding: 10px 15px;
+    background-color: #e3f2fd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-size: 0.5rem;
+  }
+
+  /* Availability Table */
+  .availability-table {
+    margin: 20px 0;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+  }
+
+  th,
+  td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+  }
+
+  td {
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .room-info {
+    text-align: left;
+    min-width: 150px;
+  }
+
+  .room-name {
+    font-weight: 500;
+  }
+
+  .room-price {
+    color: #2e7d32;
+    font-size: 0.9rem;
+  }
+
+  .room-occupancy {
+    color: #666;
+    font-size: 0.8rem;
+  }
+
+  .unavailable {
+    background-color: #ffebee;
+    color: #c62828;
+    cursor: not-allowed;
+  }
+
+  .available {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  .selected {
+    background-color: #bbdefb;
+    font-weight: bold;
+  }
+
+  .start-date {
+    border-left: 3px solid #1976d2;
+  }
+
+  .end-date {
+    border-right: 3px solid #1976d2;
+  }
+
+  .wide-modal {
+    max-width: 800px;
+  }
+
+  .modal-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .modal-header button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .booking-dates {
+    margin-bottom: 20px;
+  }
+
+  .date-range-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .date-range-display:hover {
+    background-color: #f5f5f5;
+  }
+
+  .date-range-picker-container {
+    margin-bottom: 15px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+  }
+
+  .form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  .quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .quantity-selector button {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .guest-selection {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .guest-input {
+    flex: 1;
+  }
+
+  .guest-input label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+
+  .guest-input input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .total-price {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    text-align: right;
+    font-weight: bold;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  button {
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+
+  .cancel-btn {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #333;
+  }
+
+  .cancel-btn:hover {
+    background-color: #e0e0e0;
+  }
+
+  .confirm-btn,
+  .save-btn {
+    background-color: #2196f3;
+    border: 1px solid #2196f3;
+    color: white;
+  }
+
+  .confirm-btn:hover,
+  .save-btn:hover {
+    background-color: #0d8bf2;
+  }
+
+  /* Cart Styles */
+  .cart-section {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+  }
+
+  .cart-items {
+    margin: 20px 0;
+  }
+
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+  }
+
+  .item-details {
+    flex: 1;
+  }
+
+  .item-details h4 {
+    margin: 0 0 5px 0;
+  }
+
+  .item-details p {
+    margin: 3px 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .price {
+    font-weight: bold;
+    color: #333 !important;
+  }
+
+  .remove-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #c62828;
+    cursor: pointer;
+  }
+
+  .cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  }
+
+  .cart-total p {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .cart-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  /* Form Grid */
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  @media (max-width: 768px) {
+    .booking-container {
+      padding: 15px;
+    }
+
+    .hotel-selection {
+      max-width: 100%;
+    }
+
+    .date-picker-trigger {
+      width: 100%;
+    }
+
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .guest-selection {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .modal {
+      width: 95%;
+    }
+
+    .wide-modal {
+      width: 95%;
+    }
+
+    .cart-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .remove-btn {
+      align-self: flex-end;
+      margin-top: 10px;
+    }
+
+    .cart-total {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .cart-actions {
+      width: 100%;
+    }
+
+    .cart-actions button {
+      flex: 1;
+    }
+  }
+  .extra-services-section {
+    margin: 20px 0;
+
+    h4 {
+      margin-bottom: 10px;
+    }
+  }
+
+  .extra-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .extra-service-item {
+    label {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .service-name {
+      flex-grow: 1;
+    }
+
+    .service-price {
+      color: #2e7d32;
+      font-weight: bold;
+    }
+  }
+
+  .extra-services-in-cart {
+    margin-top: 8px;
+    font-size: 0.9em;
+
+    ul {
+      margin: 5px 0 0 20px;
+      padding: 0;
+    }
+
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  .breakdown-subtitle {
+    font-weight: bold;
+    margin-top: 8px;
+  }
+
+  /* Base styles */
+  .booking-container {
+    padding: 20px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .refresh-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #45a049;
+    }
+
+    &:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+
+    &.clear-selection-button {
+      background-color: #ff6b6b;
+
+      &:hover {
+        background-color: #ff5252;
+      }
+    }
+  }
+
+  .spinning {
+    animation: spin 1s linear infinite;
+  }
+  /* Add these styles to your SCSS file */
+
+  .selection-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+
+    .cancel-selection-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      background-color: #ffebee;
+      color: #c62828;
+      border: 1px solid #ef9a9a;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #ffcdd2;
+      }
+    }
+
+    .selection-instruction {
+      font-weight: 500;
+      color: #2e7d32;
+    }
+  }
+
+  .availability-cell {
+    position: relative;
+
+    &.available {
+      cursor: pointer;
+
+      &:hover {
+        background-color: #e3f2fd !important;
+      }
+    }
+
+    &.checkin-selected {
+      background-color: #e8f5e9;
+      border: 2px solid #2e7d32;
+    }
+
+    &.checkout-selected {
+      background-color: #fff8e1;
+      border: 2px solid #ff8f00;
+    }
+
+    &.hover-range {
+      background-color: #e3f2fd;
+    }
+
+    &.selected-range {
+      background-color: #bbdefb;
+    }
+
+    .selection-indicator {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      padding: 0 3px;
+      border-radius: 3px;
+
+      &.checkin {
+        background-color: #2e7d32;
+        color: white;
+      }
+
+      &.checkout {
+        background-color: #ff8f00;
+        color: white;
+      }
+    }
+  }
+  /* Conceptual CSS for better UI */
+
+  /* The main container to align the two pickers and the arrow */
+  .time-range-group {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    gap: 15px; /* Spacing between the elements */
+  }
+
+  /* Individual input group */
+  .time-input-group {
+    flex-grow: 1; /* Allows both groups to take up equal space */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Label styling */
+  .time-input-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333; /* Darker text */
+  }
+
+  /* Icon next to the label */
+  .label-icon {
+    margin-right: 5px;
+    color: #007bff; /* Accent color */
+  }
+
+  /* The arrow in the middle */
+  .separator-icon {
+    padding-top: 20px; /* Adjust based on label height to align with inputs */
+    color: #6c757d; /* Muted color */
+  }
+
+  /* Optional: Style the react-time-picker input itself for a modern look */
+  .react-time-picker__wrapper {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 5px 10px;
+  }
+}

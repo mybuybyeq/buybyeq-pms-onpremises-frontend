@@ -108,12 +108,6 @@ Key dependencies:
 
 See `package.json` for complete list.
 
-## Documentation
-
-For more details, see:
-- [src/README.md](src/README.md) - PMS architecture documentation
-- [src/STANDALONE_CONFIG.md](src/STANDALONE_CONFIG.md) - Configuration examples
-
 ## Notes
 
 - The app requires SCSS support (included via Vite)

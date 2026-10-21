@@ -1,0 +1,264 @@
+.pms {
+  .employee-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .employee-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .status-badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .status-badge.active {
+    background-color: #e6f7ee;
+    color: #4caf50;
+  }
+
+  .status-badge.inactive {
+    background-color: #ffebee;
+    color: #f44336;
+  }
+
+  .dt-cell-action {
+    white-space: nowrap;
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: opacity 0.3s;
+  }
+
+  .edit-btn {
+    background-color: #2196f3;
+    color: white;
+  }
+
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+  }
+
+  .edit-btn:hover,
+  .delete-btn:hover {
+    opacity: 0.8;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .data-table-info {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    th,
+    td {
+      padding: 8px 10px;
+      font-size: 0.9rem;
+    }
+
+    .action-buttons {
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .edit-btn,
+    .delete-btn {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content-area-table {
+      padding: 15px;
+    }
+
+    .employee-info {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+
+    .employee-avatar {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    background: var(--secondary-color);
+    z-index: 10;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sticky-footer {
+    position: sticky;
+    bottom: 0;
+    background: var(--secondary-color);
+    z-index: 10;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .modal-content {
+    padding: 0 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .form-group.full-width {
+    grid-column: span 2;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+
+  .image-upload-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .file-input {
+    display: none;
+  }
+
+  .image-preview {
+    margin-top: 5px;
+    border: 1px dashed #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    cursor: pointer;
+  }
+
+  .preview-image {
+    max-width: 100px;
+    max-height: 60px;
+    border-radius: 4px;
+  }
+
+  .file-info,
+  .upload-prompt {
+    padding: 5px;
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  .upload-prompt {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .cancel-btn {
+    background-color: #f5f5f5;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  .cancel-btn:hover {
+    background-color: #e0e0e0;
+  }
+
+  .submit-btn:hover {
+    background-color: #45a049;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+      grid-column: span 1;
+    }
+
+    .modal-actions {
+      flex-direction: column;
+    }
+
+    .cancel-btn,
+    .submit-btn {
+      width: 100%;
+    }
+  }
+}

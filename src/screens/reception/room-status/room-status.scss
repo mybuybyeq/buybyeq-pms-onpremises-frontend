@@ -1,0 +1,82 @@
+.pms {
+  .controls {
+    display: flex;
+
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .room-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .room-table th,
+  .room-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .room-table th {
+    background-color: #f2f2f2;
+  }
+
+  .room-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    max-width: 90%;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: normal;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .modal-actions button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .modal-actions button:first-child {
+    background-color: #4caf50;
+    color: white;
+  }
+
+  .modal-actions button:first-child:hover {
+    background-color: #45a049;
+  }
+
+  .modal-actions button:last-child {
+    background-color: #f44336;
+    color: white;
+  }
+
+  .modal-actions button:last-child:hover {
+    background-color: #d32f2f;
+  }
+}

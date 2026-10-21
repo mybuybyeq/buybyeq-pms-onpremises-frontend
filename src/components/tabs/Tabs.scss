@@ -1,0 +1,84 @@
+.pms {
+  // components/Tabs.scss
+  .tabs-container {
+    width: 100%;
+    background: var(--bg-color-light);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .tabs {
+    display: flex;
+    overflow-x: auto;
+    padding: 0 10px;
+    height: 40px;
+    align-items: center;
+  }
+
+  .tab {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    margin-right: 4px;
+    background: var(--bg-color);
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    position: relative;
+
+    &.active {
+      background: var(--bg-color-light);
+      border-bottom: 1px solid var(--bg-color-light);
+      margin-bottom: -1px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background-color: #ff7849; // Orange color
+        border-radius: 2px 2px 0 0;
+      }
+    }
+
+    &:hover {
+      background: var(--bg-color-hover);
+    }
+  }
+
+  .tab-title {
+    margin-right: 6px;
+    color: var(--side-text-color);
+  }
+
+  .tab-close-btn {
+    margin-left: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--side-text-color);
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    border-radius: 2px;
+
+    &:hover {
+      opacity: 1;
+      background: var(--primary-color);
+    }
+  }
+
+  .tab-content {
+    padding: 20px;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+  }
+}

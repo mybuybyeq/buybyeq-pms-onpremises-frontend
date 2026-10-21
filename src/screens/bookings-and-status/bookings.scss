@@ -1,0 +1,722 @@
+.pms {
+  .bookings-container {
+    font-family: var(--font-family-lato);
+    color: var(--base-text-color);
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .bookings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+  }
+
+  .booking-card {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: var(--light-shadow1);
+    overflow: hidden;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
+    position: relative;
+  }
+
+  .booking-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--light-shadow2);
+  }
+
+  .booking-header {
+    background-color: var(--thead-bg-color);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--tbl-border-color);
+  }
+
+  .booking-number {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: var(--xl-text-color);
+  }
+
+  .booking-number .icon {
+    color: var(--primary-color);
+  }
+
+  .booking-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .action-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--default-transition);
+  }
+
+  .action-btn.view-services {
+    background-color: rgba(var(--blue-color), 0.1);
+    color: var(--blue-color);
+  }
+
+  .action-btn.view-services:hover {
+    background-color: rgba(var(--blue-color), 0.2);
+  }
+
+  .action-btn.add-service {
+    background-color: rgba(var(--green-color), 0.1);
+    color: var(--green-color);
+  }
+
+  .action-btn.add-service:hover {
+    background-color: rgba(var(--green-color), 0.2);
+  }
+
+  .booking-details {
+    padding: 15px;
+  }
+
+  .detail-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .detail-row .icon {
+    color: var(--side-text-color);
+    min-width: 20px;
+  }
+
+  .guest-name {
+    font-weight: 500;
+    color: var(--xl-text-color);
+  }
+
+  .services-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .close-btn:hover {
+    color: var(--base-text-color);
+  }
+
+  .services-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .services-table th {
+    background-color: var(--thead-bg-color);
+    padding: 10px 15px;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+
+  .services-table td {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--tbl-border-color);
+  }
+
+  .no-services {
+    color: var(--side-text-color);
+    font-style: italic;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .add-service-btn {
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .add-service-btn:hover {
+    background-color: var(--orange-color);
+  }
+
+  .cancel-btn {
+    padding: 8px 16px;
+    background-color: var(--bg-color-inverted);
+    border: 1px solid var(--border-color-inverted);
+    border-radius: 4px;
+    color: var(--base-text-color);
+    cursor: pointer;
+  }
+
+  .cancel-btn:hover {
+    background-color: var(--side-link-hover-color);
+  }
+
+  /* Service Form Styles */
+  .service-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .save-btn {
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .save-btn:hover {
+    background-color: var(--orange-color);
+  }
+
+  @media (max-width: 768px) {
+    .bookings-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .booking-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .booking-actions {
+      width: 100%;
+    }
+
+    .action-btn {
+      flex: 1;
+      justify-content: center;
+    }
+  }
+
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    gap: 1rem;
+  }
+
+  .error-message {
+    color: var(--error-color);
+    font-weight: 500;
+  }
+
+  .retry-btn {
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .date-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--side-text-color);
+  }
+
+  .date-display .icon {
+    color: var(--primary-color);
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 2rem;
+    color: var(--side-text-color);
+    font-style: italic;
+  }
+
+  .booking-number {
+    font-weight: 500;
+    color: var(--blue-color);
+  }
+
+  .guest-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .guest-name,
+  .guest-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .guest-name .icon {
+    color: var(--primary-color);
+  }
+
+  .guest-phone .icon {
+    color: var(--side-text-color);
+  }
+
+  .date-range {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .due-amount {
+    font-weight: 500;
+  }
+
+  .due-amount.pending {
+    color: var(--orange-color);
+  }
+
+  .due-amount.paid {
+    color: var(--green-color);
+  }
+
+  .status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .status-badge.confirmed {
+    background-color: rgba(var(--blue-color), 0.1);
+    color: var(--blue-color);
+  }
+
+  .status-badge.checked-in {
+    background-color: rgba(var(--green-color), 0.1);
+    color: var(--green-color);
+  }
+
+  .status-badge.cancelled {
+    background-color: rgba(var(--red-color), 0.1);
+    color: var(--red-color);
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  .action-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: var(--default-transition);
+  }
+
+  .action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .action-btn.pay {
+    background-color: rgba(var(--green-color), 0.1);
+    color: var(--green-color);
+  }
+
+  .action-btn.pay:not(:disabled):hover {
+    background-color: rgba(var(--green-color), 0.2);
+  }
+
+  .action-btn.cancel {
+    background-color: rgba(var(--red-color), 0.1);
+    color: var(--red-color);
+  }
+
+  .action-btn.cancel:not(:disabled):hover {
+    background-color: rgba(var(--red-color), 0.2);
+  }
+
+  .action-btn.print {
+    background-color: rgba(var(--blue-color), 0.1);
+    color: var(--blue-color);
+  }
+
+  .action-btn.print:hover {
+    background-color: rgba(var(--blue-color), 0.2);
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--side-text-color);
+    padding: 0;
+    line-height: 1;
+  }
+
+  .close-btn:hover {
+    color: var(--base-text-color);
+  }
+
+  .payment-info {
+    margin-bottom: 20px;
+  }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .info-row span:first-child {
+    font-weight: 500;
+    color: var(--side-text-color);
+  }
+
+  .payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group label {
+    font-weight: 500;
+    color: var(--side-text-color);
+    font-size: 0.9rem;
+  }
+
+  .input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 12px;
+    color: var(--side-text-color);
+  }
+
+  .input-with-icon input,
+  .input-with-icon select {
+    width: 100%;
+    padding: 10px 15px 10px 35px;
+    border-radius: 4px;
+    background-color: var(--bg-color-inverted);
+    color: var(--base-text-color);
+  }
+
+  .input-with-icon input:focus,
+  .input-with-icon select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .cancel-btn {
+    padding: 8px 16px;
+    background-color: var(--bg-color-inverted);
+    border: 1px solid var(--border-color-inverted);
+    border-radius: 4px;
+    color: var(--base-text-color);
+    cursor: pointer;
+  }
+
+  .cancel-btn:hover {
+    background-color: var(--side-link-hover-color);
+  }
+
+  .submit-btn,
+  .confirm-btn {
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .submit-btn:hover,
+  .confirm-btn:hover {
+    background-color: var(--orange-color);
+  }
+
+  .submit-btn:disabled,
+  .confirm-btn:disabled {
+    background-color: var(--side-link-hover-color);
+    cursor: not-allowed;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #888;
+  }
+
+  .close-btn:hover {
+    color: #333;
+  }
+
+  .print-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 8px 0;
+  }
+
+  .print-option {
+    padding: 10px 14px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .print-option:hover {
+    background-color: #ffd903;
+  }
+
+  /* Column Selector Styles */
+  .column-selector-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+
+    &:hover {
+      background-color: var(--primary-dark-color);
+    }
+  }
+
+  .column-selector {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 15px;
+
+    .column-option {
+      display: flex;
+      align-items: center;
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+      }
+
+      input[type="checkbox"] {
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
+  }
+
+  .reset-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  }
+
+  /* Small modal adjustments */
+  .small-modal {
+    max-width: 500px;
+    width: 90%;
+  }
+
+  /* Modal actions styling */
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .column-selector {
+      grid-template-columns: 1fr;
+    }
+
+    .data-table-actions {
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .column-selector-btn,
+      .search-box,
+      .filter-dropdown,
+      .export-btn {
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  .data-table-diagram table {
+    font-size: 13px;
+  }
+
+  .icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 6px;
+    font-size: 16px;
+    color: var(--base-text-color);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+
+  .payment-summary .info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  /* GST Row Container */
+  .gst-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .gst-label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gst-label small {
+    color: #777;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  /* Switch Wrapper */
+  .gst-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .gst-loading {
+    font-size: 12px;
+    color: #007bff;
+  }
+
+  .gst-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+  }
+
+  .gst-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .gst-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 34px;
+  }
+
+  .gst-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+  }
+
+  .gst-switch input:checked+.gst-slider {
+    background-color: #4caf50;
+  }
+
+  .gst-switch input:checked+.gst-slider:before {
+    transform: translateX(22px);
+  }
+}
